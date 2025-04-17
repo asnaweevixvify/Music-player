@@ -1,0 +1,9 @@
+{
+    "song":[
+        {"id":1 ,"name":"เพลงตลก","songsrc":"comedysong","imgsrc":"1"},
+        {"id":2 ,"name":"เพลงชิล","songsrc":"chill","imgsrc":"2"},
+        {"id":3 ,"name":"เพลงตื่นเต้น","songsrc":"impact","imgsrc":"3"},
+        {"id":4 ,"name":"เพลงเหงา","songsrc":"lonely","imgsrc":"4"},
+        {"id":5 ,"name":"เพลงซาน","songsrc":"sun","imgsrc":"5"}
+    ]
+}

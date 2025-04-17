@@ -8,13 +8,13 @@ let song = document.querySelector('#myaudio')
 let nameSongDisplay = document.querySelector('.h1-name')
 let i = 1;
 
-let nameSong=[
-    {id:1 ,name:"เพลงตลก"},
-    {id:2 ,name:"เพลงตื่นเต้น"},
-    {id:3 ,name:"เพลงเหงา"},
-    {id:4 ,name:"เพลงชิว"},
-    {id:5 ,name:"เพลงซาน"}
-]
+fetch('song.json').then(res=>{
+    res.json().then(json=>{
+        nameSong = json
+            console.log(nameSong.song.length)
+        });
+    })
+
 
 function play(){
     if(playButton.classList.contains('fa-play')){
@@ -36,36 +36,42 @@ function play(){
 }
 
 function next(){
-    img.classList.remove('imgplay')
     progessBar.style.width = '0%'
     i+=1
-    if(i>nameSong.length){
-        i-=nameSong.length
+    if(i>nameSong.song.length){
+        i-=nameSong.song.length
     }
-    img.src=`/pic/${i}.jpg`
-    song.src=`/song/${i}.mp3`
+    img.src=`/pic/${nameSong.song[i-1].imgsrc}.jpg`
+    song.src=`/song/${nameSong.song[i-1].songsrc}.mp3`
     song.id='myaudio';
-    nameSongDisplay.innerHTML = `${nameSong[i-1].name}`
+    nameSongDisplay.innerHTML = `${nameSong.song[i-1].name}`
     if(playButton.classList.contains('fa-pause')){
         song.play();
     }
     else{
         song.pause();
+        img.classList.remove('imgplay')
     }
     
 }
 
 function prev(){
-    img.classList.remove('imgplay')
     progessBar.style.width = '0%'
     i-=1
     if(i===0){
-        i+=nameSong.length
+        i+=nameSong.song.length
     }
-    img.src=`/pic/${i}.jpg`
-    song.src=`/song/${i}.mp3`
+    img.src=`/pic/${nameSong.song[i-1].imgsrc}.jpg`
+    song.src=`/song/${nameSong.song[i-1].songsrc}.mp3`
     song.id='myaudio';
-    nameSongDisplay.innerHTML = `${nameSong[i-1].name}`
+    nameSongDisplay.innerHTML = `${nameSong.song[i-1].name}`
+    if(playButton.classList.contains('fa-pause')){
+        song.play();
+    }
+    else{
+        song.pause();
+        img.classList.remove('imgplay')
+    }
 }
 progressContainer.addEventListener('click',function(e){
     const width = this.clientWidth
@@ -76,12 +82,12 @@ progressContainer.addEventListener('click',function(e){
 song.addEventListener('ended',function(){
     progessBar.style.width = '0%'
     i+=1
-    if(i>nameSong.length){
-        i-=nameSong.length
+    if(i>nameSong.song.length){
+        i-=nameSong.song.length
     }
-    img.src=`/pic/${i}.jpg`
-    song.src=`/song/${i}.mp3`
+    img.src=`/pic/${nameSong.song[i-1].imgsrc}.jpg`
+    song.src=`/song/${nameSong.song[i-1].songsrc}.mp3`
     song.id='myaudio';
-    nameSongDisplay.innerHTML = `${nameSong[i-1].name}`
+    nameSongDisplay.innerHTML = `${nameSong.song[i-1].name}`
     song.play();
 })
