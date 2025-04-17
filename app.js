@@ -9,11 +9,11 @@ let nameSongDisplay = document.querySelector('.h1-name')
 let i = 1;
 
 let nameSong=[
-    {name:"เพลงตลก"},
-    {name:"เพลงตื่นเต้น"},
-    {name:"เพลงเหงา"},
-    {name:"เพลงชิว"},
-    {name:"เพลงซาน"}
+    {id:1 ,name:"เพลงตลก"},
+    {id:2 ,name:"เพลงตื่นเต้น"},
+    {id:3 ,name:"เพลงเหงา"},
+    {id:4 ,name:"เพลงชิว"},
+    {id:5 ,name:"เพลงซาน"}
 ]
 
 function play(){
