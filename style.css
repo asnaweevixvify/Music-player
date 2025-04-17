@@ -1,0 +1,93 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: cadetblue;
+}
+h1{
+    font-family: 'Kanit';
+    font-weight: 400;
+}
+.h1-1{
+    color: white;
+    text-align: center;
+    margin-top: 70px;
+}
+.musicbg{
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    margin-left: 750px;
+    width: 300px;
+    height: 100px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+.h1-name{
+    color: black;
+    font-size: 25px;
+    margin-left: 150px;
+    margin-top: 10px;
+}
+.bar{
+    background-color: gray;
+    width: 130px;
+    height: 5px;
+    margin-left: 145px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.progress{
+    width: 0%;
+    background-color: red;
+    height: 5px;
+}
+.playbg{
+    width: 500px;
+    height: 150px;
+    background-color: white;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-top: -15px;
+    box-shadow: 2px 2px 2px black;
+}
+.playbarAll{
+    display: flex;
+    gap: 40px;
+    margin-left: 110px;
+    margin-top: 60px;
+}
+
+.imgplay{
+    border: 1px solid transparent;
+    border-radius: 100px;
+    margin-top: -60px;
+    margin-left: 20px;
+    width: 150px;
+    height: 150px;
+    animation: spin 5s linear infinite;
+}
+img{
+    border: 1px solid transparent;
+    border-radius: 100px;
+    margin-top: -60px;
+    margin-left: 20px;
+    width: 150px;
+    height: 150px;
+}
+i{
+    cursor: pointer;
+}
+@keyframes spin{
+    from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+}
